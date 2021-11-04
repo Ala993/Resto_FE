@@ -1,0 +1,76 @@
+<div class="container h-100" style="margin-top: 150px;" *ngIf="!loged">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-12 col-xl-11">
+            <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+                    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4" style="color: rgb(255, 115, 0);">
+                        Login</p>
+                    <form class="mx-1 mx-md-4">
+                        <div class="d-flex flex-row align-items-center mb-4">
+                            <span style="color: rgb(247, 123, 22);">
+                                <i class="fas fa-user fa-lg me-3 fa-fw mr-2"></i>
+                            </span>
+                            <input type="text" [(ngModel)]="email" name="name" class="form-control"
+                                placeholder="Enter your Email" />
+                        </div>
+
+                        <div class="d-flex flex-row align-items-center mb-4">
+                            <span style="color: rgb(247, 123, 22);">
+                                <i class="fas fa-key fa-lg me-3 fa-fw mr-2"></i>
+                            </span>
+                            <input type="text" [(ngModel)]="password" name="password" class="form-control"
+                                placeholder="Enter your password" />
+                        </div>
+                        <span style="color: red; margin-left: 35px;" *ngIf="wrong"> Wrong email or password</span>
+                        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                            <button type="button" class="btn btn-warning btn-lg"
+                                style="color: #fff; background-color: rgb(255, 115, 0);" (click)="checking()">Add
+                                Chef</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div *ngIf="loged">
+    <ul class="nav nav-tabs" id="myTab" role="tablist" style="margin-top: 150px;">
+        <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#admin-chefs" role="tab"
+                aria-controls="profile" aria-selected="false">Display chefs</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#admin-dishes" role="tab"
+                aria-controls="profile" aria-selected="false">Display Dishes</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="home-tab" data-toggle="tab" href="#chef" role="tab" aria-controls="home"
+                aria-selected="false">Add new chef</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#dish" role="tab" aria-controls="profile"
+                aria-selected="false">Add new Dish</a>
+        </li>
+        <li class="nav-item float-right" >
+            <a class="btn " id="profile-tab" data-toggle="tab" role="tab" aria-controls="profile"
+                aria-selected="false" (click)="logout()">Log out</a>
+        </li>
+
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="admin-chefs" role="tabpanel" aria-labelledby="profile-tab">
+            <app-display-chefs></app-display-chefs>
+        </div>
+        <div class="tab-pane fade" id="admin-dishes" role="tabpanel" aria-labelledby="profile-tab">
+            <app-display-dishes></app-display-dishes>
+        </div>
+        <div class="tab-pane fade" id="chef" role="tabpanel" aria-labelledby="home-tab">
+            <app-add-chef></app-add-chef>
+        </div>
+        <div class="tab-pane fade" id="dish" role="tabpanel" aria-labelledby="profile-tab">
+            <app-add-dish></app-add-dish>
+        </div>
+    </div>
+</div>

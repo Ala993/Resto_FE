@@ -1,0 +1,31 @@
+<section class="chefs_part blog_item_section section_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5">
+                <div class="section_tittle">
+                    <p>Team Member</p>
+                    <h2>Our Experienced Chefs</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-md">
+            <div class="col-sm-6 col-lg-4" *ngFor ="let chef of chefs" >
+                <div class="single_blog_item" style="margin-top: 20px;">
+                    <div class="single_blog_img">
+                        <img src="{{this.host+'/image/'+chef.id}}" alt="" height="300px" width="300px">
+                    </div>
+                    <div class="single_blog_text text-center">
+                        <h3>{{chef.name}}</h3>
+                        <p>{{chef.position}}</p>
+                        <div class="social_icon">
+                            <a href="#"> <i class="ti-facebook"></i> </a>
+                            <a href="#"> <i class="ti-twitter-alt"></i> </a>
+                            <a href="#"> <i class="ti-instagram"></i> </a>
+                            <a href="#"> <i class="ti-skype"></i> </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

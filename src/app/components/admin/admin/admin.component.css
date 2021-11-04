@@ -1,0 +1,4 @@
+a {  
+    color: rgb(247, 123, 22);  
+}
+li:last-child { float: right; margin-left: auto; }

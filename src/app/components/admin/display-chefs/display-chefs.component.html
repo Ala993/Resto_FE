@@ -1,0 +1,30 @@
+<div class="container">
+    <table class="table">
+        <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Birth date</th>
+            <th>Image</th>
+            <th>Delete</th>
+            <th>Edit</th>
+        </tr>
+        <tr *ngFor="let p of chefs ">
+            <td>{{p?.name}}</td>
+            <td>{{p?.position}}</td>
+            <td>{{p?.birthDate | date:'dd/MM/yyyy'}} </td>
+            <td>  <img src="{{this.host+'/image/'+p.id}}" style="height: 50px; width: 100px;"> </td>
+            <td>
+                <button class="btn btn-danger" (click)="deletChef(p.id)">
+                    <span class="fa fa-trash-o"></span>
+                </button>
+            </td>
+            <td>
+                <button class="btn btn-primary ">
+                    <span class="fa fa-edit"></span>
+                </button>
+            </td>
+        </tr>
+
+    </table>
+
+</div>
